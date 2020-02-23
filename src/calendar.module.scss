@@ -1,0 +1,50 @@
+.calendar {
+	height: 250px;
+	width: 190px;
+	padding: 0 20px;
+	.month {
+		padding: 5px 0;
+		color: grey;
+	}
+	.weekrow {
+		display: flex;
+		justify-content: space-between;
+		padding: 5px 0;
+		.week {
+			width: 18px;
+			color: grey;
+		}
+	}
+	.date {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		flex-direction: column;
+		.daterow {
+			display: flex;
+			justify-content: space-between;
+			padding: 5px 0;
+			.lastmonth {
+				display: flex;
+				width: 18px;
+				color: grey;
+			}
+			.today {
+				display: flex;
+				width: 18px;
+				color: white;
+				background-color: blue;
+				border-radius: 50%;
+			}
+			.thismonth {
+				display: flex;
+				width: 18px;
+			}
+			.nextmonth {
+				display: flex;
+				width: 18px;
+				color: grey;
+			}
+		}
+	}
+}
