@@ -11,7 +11,6 @@ const todayYear = new Date().getFullYear();
 const todayMonth = new Date().getMonth();
 const todayDate = new Date().getDate();
 const Calendar = props => {
-	console.log(todayYear, todayMonth, todayDate, props);
 	const isTodayMonth = props.year === todayYear && props.index === todayMonth;
 	const daysInLastMonth =
 		props.index + 1 > 1
