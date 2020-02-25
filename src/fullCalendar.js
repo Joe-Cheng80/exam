@@ -61,15 +61,27 @@ class FullCalendar extends PureComponent {
 									year: e.target.value
 								});
 							}}
+							onKeyPress={e => {
+								(e.which === 13 || e.keyCode === 13) &&
+									this.setState({
+										renderYear: parseInt(e.target.value)
+									});
+							}}
 						/>
 					</div>
-					{!this.state.year.toString().match(/^\d+$/) && (
-						<div className={styles.error}>* 請輸入1~9999</div>
-					)}
+					{!this.state.year
+						.toString()
+						.match(
+							/^(?:[1-9][0-9]{3}|[1-9][0-9]{2}|[1-9][0-9]|[1-9])$/
+						) && <div className={styles.error}>* 請輸入1~9999</div>}
 					<div
 						className={styles.show}
 						onClick={() =>
-							this.state.year.toString().match(/^\d+$/) &&
+							this.state.year
+								.toString()
+								.match(
+									/^(?:[1-9][0-9]{3}|[1-9][0-9]{2}|[1-9][0-9]|[1-9])$/
+								) &&
 							this.setState({
 								renderYear: parseInt(this.state.year)
 							})
