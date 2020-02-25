@@ -58,7 +58,7 @@ class FullCalendar extends PureComponent {
 							value={this.state.year}
 							onChange={e => {
 								this.setState({
-									year: parseInt(e.target.value)
+									year: e.target.value
 								});
 							}}
 						/>
@@ -70,7 +70,9 @@ class FullCalendar extends PureComponent {
 						className={styles.show}
 						onClick={() =>
 							this.state.year.toString().match(/^\d+$/) &&
-							this.setState({ renderYear: this.state.year })
+							this.setState({
+								renderYear: parseInt(this.state.year)
+							})
 						}
 					>
 						SHOW
